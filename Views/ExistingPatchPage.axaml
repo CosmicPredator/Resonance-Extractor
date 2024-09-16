@@ -1,0 +1,59 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ResonanceExtractor.ExistingPatchPage">
+	<Grid RowDefinitions="Auto, Auto, *, Auto"
+		  Margin="0, 10, 0, 0">
+		<Grid Grid.Row="0" ColumnDefinitions="5*, 1*"
+			  Margin="0, 0, 0, 10">
+			<Border CornerRadius="8">
+				<TextBox HorizontalAlignment="Stretch"
+						 x:Name="PCKFilePathTB"
+						 Watermark="Choose PCK File"
+						 IsReadOnly="True"/>
+			</Border>
+			<Button x:Name="ChooseFileButton"
+					Content="Pick File"
+					Click="ChooseFileButton_Click"
+					Margin="10, 0, 0, 0"
+					HorizontalContentAlignment="Center"
+					HorizontalAlignment="Stretch"
+					Grid.Column="1"/>
+		</Grid>
+		<Grid Grid.Row="1" ColumnDefinitions="5*, 1*">
+			<Border CornerRadius="8">
+				<TextBox HorizontalAlignment="Stretch"
+						 x:Name="OutputFolderTB"
+						 Watermark="Select Output Folder"
+						 IsReadOnly="True"/>
+			</Border>
+			<Button x:Name="OutputFolderButton"
+					Click="OutputFolderButton_Click"
+					Content="Pick Folder"
+					Margin="10, 0, 0, 0"
+					HorizontalContentAlignment="Center"
+					HorizontalAlignment="Stretch"
+					Grid.Column="1"/>
+		</Grid>
+
+		<Grid Grid.Row="2">
+			<Image Source="/Assets/paimon.png"
+				   Stretch="None"
+				   Opacity="0.3"
+				   Height="150"/>
+		</Grid>
+		
+		
+		<Grid Grid.Row="3"
+			  Margin="10, 0, 10, 10"
+			  HorizontalAlignment="Right">
+			<StackPanel Orientation="Horizontal">
+				<Button Content="Start"/>
+				<Button Content="Cancel"
+						Margin="10, 0, 0, 0"/>
+			</StackPanel>
+		</Grid>
+	</Grid>
+</UserControl>
