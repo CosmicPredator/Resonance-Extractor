@@ -4,7 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="ResonanceExtractor.ExistingPatchPage">
-	<Grid RowDefinitions="Auto, Auto, *, Auto"
+	<Grid RowDefinitions="Auto, Auto, Auto, *, Auto"
 		  Margin="0, 10, 0, 0">
 		<Grid Grid.Row="0" ColumnDefinitions="5*, 1*"
 			  Margin="0, 0, 0, 10">
@@ -38,21 +38,51 @@
 					Grid.Column="1"/>
 		</Grid>
 
-		<Grid Grid.Row="2">
+		<Grid Grid.Row="2" ColumnDefinitions="*, *, *, *"
+			  Margin="0, 10, 0, 0">
+			<CheckBox Grid.Column="0" Content="WAV"/>
+			<CheckBox Grid.Column="1" Content="FLAC"/>
+			<CheckBox Grid.Column="2" Content="MP3"/>
+			<CheckBox Grid.Column="3" Content="OGG"/>
+		</Grid>
+
+		<Grid Grid.Row="3">
 			<Image Source="/Assets/paimon.png"
-				   Stretch="None"
 				   Opacity="0.3"
-				   Height="150"/>
+				   Height="170"
+				   x:Name="PaimonImage"/>
+			<Grid Margin="10, 0" RowDefinitions="Auto, Auto"
+				  VerticalAlignment="Center"
+				  x:Name="ProgressView"
+				  IsVisible="False">
+				<StackPanel Orientation="Vertical">
+					<TextBlock Text="Overall Progress"/>
+					<ProgressBar IsIndeterminate="True"
+								 Margin="0, 10, 0, 0"/>
+				</StackPanel>
+				<StackPanel Orientation="Vertical"
+							Grid.Row="1"
+							Margin="0, 20, 0, 0">
+					<TextBlock>
+						<Run Text="Individual Progress:"/>
+						<Run x:Name="IndividualProgressStatusText" Text="Ready"/>
+					</TextBlock>
+					<ProgressBar Margin="0, 10, 0, 0"
+								 x:Name="IndividualTaskProgressBar"/>
+				</StackPanel>
+			</Grid>
 		</Grid>
 		
 		
-		<Grid Grid.Row="3"
+		<Grid Grid.Row="4"
 			  Margin="10, 0, 10, 10"
 			  HorizontalAlignment="Right">
 			<StackPanel Orientation="Horizontal">
-				<Button Content="Start"/>
+				<Button Content="Start"
+						Click="Button_Click_1"/>
 				<Button Content="Cancel"
-						Margin="10, 0, 0, 0"/>
+						Margin="10, 0, 0, 0"
+						Click="Button_Click_2"/>
 			</StackPanel>
 		</Grid>
 	</Grid>

@@ -11,6 +11,8 @@
 			<local:ExistingPatchPage />
 		</TabItem>
 		<TabItem Header="New Patch"
-				 FontSize="15"/>
+				 FontSize="15">
+			<local:NewPatchPage />
+		</TabItem>
 	</TabControl>
 </UserControl>

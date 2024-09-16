@@ -3,13 +3,14 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
+	  <PublishAot>true</PublishAot>
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
 
   <ItemGroup>
-    <AvaloniaResource Include="Assets\**"/>
+    <AvaloniaResource Include="Assets\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -19,5 +20,75 @@
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.1.0" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.1.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Include="Libs\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AvaloniaResource Remove="Libs\avcodec-vgmstream-59.dll" />
+    <AvaloniaResource Remove="Libs\avformat-vgmstream-59.dll" />
+    <AvaloniaResource Remove="Libs\avutil-vgmstream-57.dll" />
+    <AvaloniaResource Remove="Libs\ffmpeg.exe" />
+    <AvaloniaResource Remove="Libs\libatrac9.dll" />
+    <AvaloniaResource Remove="Libs\libcelt-0061.dll" />
+    <AvaloniaResource Remove="Libs\libcelt-0110.dll" />
+    <AvaloniaResource Remove="Libs\libg719_decode.dll" />
+    <AvaloniaResource Remove="Libs\libmpg123-0.dll" />
+    <AvaloniaResource Remove="Libs\libspeex-1.dll" />
+    <AvaloniaResource Remove="Libs\libvorbis.dll" />
+    <AvaloniaResource Remove="Libs\quickbms.exe" />
+    <AvaloniaResource Remove="Libs\swresample-vgmstream-4.dll" />
+    <AvaloniaResource Remove="Libs\vgmstream-cli.exe" />
+    <AvaloniaResource Remove="Libs\wavescan.bms" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Libs\avcodec-vgmstream-59.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Libs\avformat-vgmstream-59.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Libs\avutil-vgmstream-57.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Libs\ffmpeg.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Libs\libatrac9.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Libs\libcelt-0061.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Libs\libcelt-0110.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Libs\libg719_decode.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Libs\libmpg123-0.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Libs\libspeex-1.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Libs\libvorbis.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Libs\quickbms.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Libs\swresample-vgmstream-4.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Libs\vgmstream-cli.exe">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Libs\wavescan.bms">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 </Project>

@@ -1,0 +1,18 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="ResonanceExtractor.NewPatchPage">
+	<Grid VerticalAlignment="Center"
+		  HorizontalAlignment="Center">
+		<StackPanel Orientation="Horizontal">
+			<TextBlock Text="Coming Soon..."
+					   VerticalAlignment="Center"/>
+			<HyperlinkButton Content="See Why" Margin="10, 0, 0, 0"
+							 VerticalAlignment="Center"
+							 VerticalContentAlignment="Center"
+							 ToolTip.Tip="I Have to wait for a new patch update to test my scripts. Until that, please be patient...!"/>
+		</StackPanel>
+	</Grid>
+</UserControl>
