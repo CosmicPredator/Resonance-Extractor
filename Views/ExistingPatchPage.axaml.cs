@@ -94,6 +94,7 @@ public partial class ExistingPatchPage : UserControl
 
         foreach (var file in dirInfo.GetFiles())
         {
+            IndividualProgressStatusText.Text = $"WEM => WAV: {file.Name}";
             var WavWemConvert = new WemWavConvert(
                 $"{OutputFolderPath}/WAV/{file.Name.Replace(".wem", ".wav")}", file.FullName);
             await WavWemConvert.ConvertAsync();
@@ -130,6 +131,7 @@ public partial class ExistingPatchPage : UserControl
 
         foreach (var file in directoryInfo.GetFiles())
         {
+            IndividualProgressStatusText.Text = $"WAV => {folderName}: {file.Name}";
             var wavOtherConverter = new WavOtherFormatConvert(file.FullName,
                 $"{OutputFolderPath}\\{folderName}\\{file.Name.Replace(".wav", extensionName)}",
                 outputType);
@@ -160,6 +162,8 @@ public partial class ExistingPatchPage : UserControl
         IndividualProgressStatusText.Text = "Converting WAV => OGG...";
         await PostProcessFormats(FileType.OGG);
         Debug.WriteLine("Processed Ogg...!");
+
+        Directory.Delete(Constants.WemFolderLocation(), true);
 
         SwitchProgressViews(false);
     }

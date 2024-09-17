@@ -19,7 +19,7 @@ namespace ResonanceExtractor.Helpers
         public static string FFMpegEXE = "Libs\\ffmpeg.exe";
         public static string FFMpegFLACArgs = "-i \"{0}\" -sample_fmt s16 -ar 44100 \"{1}\"";
         public static string FFMpegMP3Args = "-i \"{0}\" -b:a 320k \"{1}\"";
-        public static string FFMpegOGGArgs = "-i \"{0}\" -acodec libvorbis -b:a 320k \"{1}\"";
+        public static string FFMpegOGGArgs = "-i \"{0}\" -b:a 320k \"{1}\"";
 
         public static string WemFolderLocation()
         {
