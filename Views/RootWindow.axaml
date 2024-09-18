@@ -7,6 +7,9 @@
         x:Class="ResonanceExtractor.RootWindow"
 		CanResize="False"
 		Width="720" Height="400"
+		Closing="Window_Closing"
+		TransparencyLevelHint="Mica"
+		Background="Transparent"
         Title="Resonance Extractor">
 	<local:MainPage />
 </Window>

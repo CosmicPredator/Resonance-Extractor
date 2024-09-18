@@ -40,15 +40,21 @@
 
 		<Grid Grid.Row="2" ColumnDefinitions="*, *, *, *"
 			  Margin="0, 10, 0, 0">
-			<CheckBox Grid.Column="0" Content="WAV"/>
-			<CheckBox Grid.Column="1" Content="FLAC"/>
-			<CheckBox Grid.Column="2" Content="MP3"/>
-			<CheckBox Grid.Column="3" Content="OGG"/>
+			<CheckBox Grid.Column="0" Content="WAV"
+					  x:Name="WavCheckBox"
+					  IsChecked="True"/>
+			<CheckBox Grid.Column="1" Content="FLAC"
+					  x:Name="FlacCheckBox"/>
+			<CheckBox Grid.Column="2" Content="MP3"
+					  x:Name="Mp3CheckBox"/>
+			<CheckBox Grid.Column="3" Content="OGG"
+					  x:Name="OggCheckBox"/>
 		</Grid>
 
 		<Grid Grid.Row="3">
 			<Image Source="/Assets/paimon.png"
 				   Opacity="0.3"
+				   Stretch="UniformToFill"
 				   Height="170"
 				   x:Name="PaimonImage"/>
 			<Grid Margin="10, 0" RowDefinitions="Auto, Auto"
@@ -57,7 +63,7 @@
 				  IsVisible="False">
 				<StackPanel Orientation="Vertical">
 					<TextBlock Text="Overall Progress"/>
-					<ProgressBar IsIndeterminate="True"
+					<ProgressBar x:Name="OverallProgress"
 								 Margin="0, 10, 0, 0"/>
 				</StackPanel>
 				<StackPanel Orientation="Vertical"
@@ -77,13 +83,11 @@
 		<Grid Grid.Row="4"
 			  Margin="10, 0, 10, 10"
 			  HorizontalAlignment="Right">
-			<StackPanel Orientation="Horizontal">
-				<Button Content="Start"
-						Click="Button_Click_1"/>
-				<Button Content="Cancel"
-						Margin="10, 0, 0, 0"
-						Click="Button_Click_2"/>
-			</StackPanel>
+			<Button Content="Start"
+						x:Name="StartButton"
+						Click="StartButton_Click"
+					HorizontalContentAlignment="Center"
+						Width="100"/>
 		</Grid>
 	</Grid>
 </UserControl>

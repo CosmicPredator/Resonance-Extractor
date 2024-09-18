@@ -4,6 +4,9 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <BuiltInComInteropSupport>true</BuiltInComInteropSupport>
+    <ApplicationIcon>Assets/logo.ico</ApplicationIcon>
+    <PublishAot>true</PublishAot>
+	<StripSymbols>true</StripSymbols>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
   </PropertyGroup>
@@ -19,28 +22,6 @@
     <PackageReference Include="Avalonia.Fonts.Inter" Version="11.1.0" />
     <!--Condition below is needed to remove Avalonia.Diagnostics package from build output in Release configuration.-->
     <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.1.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <AvaloniaResource Include="Libs\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <AvaloniaResource Remove="Libs\avcodec-vgmstream-59.dll" />
-    <AvaloniaResource Remove="Libs\avformat-vgmstream-59.dll" />
-    <AvaloniaResource Remove="Libs\avutil-vgmstream-57.dll" />
-    <AvaloniaResource Remove="Libs\ffmpeg.exe" />
-    <AvaloniaResource Remove="Libs\libatrac9.dll" />
-    <AvaloniaResource Remove="Libs\libcelt-0061.dll" />
-    <AvaloniaResource Remove="Libs\libcelt-0110.dll" />
-    <AvaloniaResource Remove="Libs\libg719_decode.dll" />
-    <AvaloniaResource Remove="Libs\libmpg123-0.dll" />
-    <AvaloniaResource Remove="Libs\libspeex-1.dll" />
-    <AvaloniaResource Remove="Libs\libvorbis.dll" />
-    <AvaloniaResource Remove="Libs\quickbms.exe" />
-    <AvaloniaResource Remove="Libs\swresample-vgmstream-4.dll" />
-    <AvaloniaResource Remove="Libs\vgmstream-cli.exe" />
-    <AvaloniaResource Remove="Libs\wavescan.bms" />
   </ItemGroup>
 
   <ItemGroup>
