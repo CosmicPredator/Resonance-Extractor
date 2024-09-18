@@ -5,7 +5,7 @@ An Improved app to extract Audio files from Genshin Impact or any other unreal e
 <h3></h3>
 
 <div>
- <image src="https://github.com/CosmicPredator/Resonance-Extractor/Docs/image.jpg" width="200"/>
+ <image src="https://github.com/CosmicPredator/Resonance-Extractor/tree/master/Docs/image.jpg" width="200"/>
 </div>
 
 </div>
