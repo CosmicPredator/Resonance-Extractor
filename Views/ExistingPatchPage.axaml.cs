@@ -74,7 +74,7 @@ public partial class ExistingPatchPage : UserControl
     private async void StartButton_Click(object? sender, Avalonia.Interactivity.RoutedEventArgs e)
     {
         enableButtons(false);
-        await Task.Run(ProcessPCK);
+        await ProcessPCK();
         enableButtons(true);
     }
 
